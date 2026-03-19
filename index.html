@@ -1,69 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <style>
-    body {
-        font-family: Arial;
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-    }
-    h1 {
-        color: #2c3e50;
-    }
-    video {
-        width: 100%;
-    }
-  </style>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time BSL Captioning</title>
-
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Real-Time BSL Captioning</title>
+  </head>
   <body>
-    <div="title_screen">
 
-      <!-- IMAGE/LOGO -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="profile-circle"></div>
+        <div class="hero-text">
+          <h1>Grace Carey</h1>
+          <p>Aspiring software engineer and advocate for inclusion in technology</p>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/gracecarey-dev/" aria-label="LinkedIn">
+              <img src="extras/images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/grxce-dev" aria-label="GitHub">
+              <img src="extras/images/github.png" alt="GitHub">
+            </a>
+            <a href="mailto:grxce.dev@gmail.com?subject=Get%20in%20Touch!" aria-label="Email">
+              <img src="extras/images/email4.png" alt="Gmail">
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
 
-      <h1>Grace Carey</h1>
-      <h3> Aspiring software engineer and advocate for inclusion in technology </h3>
+    <main>
 
-      |<a href="linkedin"><img src="images/linkedin_logo.png" alt="LinkedIn" style="width:42px;height:42px;"></a>
-      <a href="default.asp"><img src="smiley.gif" alt="GitHub" style="width:42px;height:42px;"></a>
-      <a href="default.asp"><img src="smiley.gif" alt="Email" style="width:42px;height:42px;"></a>
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          Brief intro about your project or yourself goes here. Keep this short and clear.
+        </p>
+      </section>
 
+      <section class="demo-box" aria-label="Project demo">
+        <!-- Placeholder for video/demo -->
+      </section>
 
-    </div>
-    
-  <h2>Demo</h2>
-    
-  <p>Watch the prototype recognising BSL signs:</p>
-    
-  <h2>Current Capabilities</h2>
-    
-  <ul>
-    <li>Webcam-based hand detection</li>
-    <li>Hand landmark extraction using MediaPipe</li>
-    <li>Sequence classification using TensorFlow</li>
-    <li>Real-time caption output</li>
-  </ul>
-    
-  <h2>Project Links</h2>
-    
-  <p>link to github - view source code</p>
-    
-  <h2>Contact</h2>
-    
-  <p>
-    Name: Your Name<br>
-    Email: your.email@example.com<br>
-    LinkedIn:<br>
-    Last updated: March 2026
-  </p>
+      <section>
+        <h2>Current Capabilities</h2>
+        <ul>
+          <li>Webcam video capture (OpenCV)</li>
+          <li>Hand landmark extraction (MediaPipe)</li>
+          <li>Feature vector generation (.npy)</li>
+          <li>Initial TensorFlow/Keras classifier</li>
+        </ul>
+      </section>
+
+      <section class="timeline">
+        <h2>Pipeline</h2>
+        <div class="timeline-container">
+
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Webcam Video</h3>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>MediaPipe</h3>
+              <p>Hand Landmark Detection</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Feature Vector Creation</h3>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>TensorFlow / Keras</h3>
+              <p>Classifier</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Predicted Sign</h3>
+              <p>Text Output</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="future">
+        <h2>Future Developments</h2>
+        <ul>
+          <li>Expanded BSL vocabulary</li>
+          <li>Sentence-level recognition</li>
+          <li>Real-time captioning overlay</li>
+          <li>Mobile device support</li>
+        </ul>
+      </section>
+
+      <section class="contact">
+        <div class="contact-form-wrapper">
+
+          <div class="contact-icons">
+            <a href="https://www.linkedin.com/in/gracecarey-dev/" class="contact-item">
+              <div class="circle"></div>
+              <p><strong>LinkedIn</strong></p>
+            </a>
+            <a href="https://github.com/grxce-dev" class="contact-item">
+              <div class="circle"></div>
+              <p><strong>GitHub</strong><br>— view source code</p>
+            </a>
+            <a href="https://github.com/grxce-dev" class="contact-item">
+              <div class="circle"></div>
+              <p><strong>GitHub</strong><br>— view profile</p>
+            </a>
+          </div>
+
+          <div class="contact-form">
+            <form
+              action="https://formspree.io/f/xgondady"
+              method="POST"
+            >
+            <label for="email">Your email:</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com">
+
+            <label for="message">Your message:</label>
+            <textarea id="message" name="message" placeholder="Say hello…"></textarea>
+
+            <button type="submit">Send</button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© 2026 Grace Carey &nbsp;·&nbsp; <a href="#">Back to top</a></p>
+    </footer>
+
+    <script>
+      // Animate timeline items into view on scroll
+      const items = document.querySelectorAll('.timeline-item');
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }),
+        { threshold: 0.2 }
+      );
+      items.forEach(item => observer.observe(item));
+    </script>
 
   </body>
-  <footer>
-    <p> ADD LINKS THAT WHERE INCLUDED AT THE TOP</p>
-  </footer>
 </html>
