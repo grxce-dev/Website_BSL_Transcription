@@ -7,13 +7,13 @@
     <title>Real-Time BSL Captioning</title>
   </head>
   <body>
- 
+
     <header class="hero">
       <div class="hero-content">
         <div class="profile-circle"></div>
         <div class="hero-text">
           <h1>Grace Carey</h1>
-          <p>Aspiring software engineer and advocate for inclusion in technology</p>
+          <p>Building real-time AI systems to make communication more accessible</p>
           <div class="contact-links">
             <a href="https://www.linkedin.com/in/gracecarey-dev/" aria-label="LinkedIn">
               <img src="extras/images/linkedin.png" alt="LinkedIn">
@@ -21,25 +21,31 @@
             <a href="https://github.com/grxce-dev" aria-label="GitHub">
               <img src="extras/images/github.png" alt="GitHub">
             </a>
-            <a href="/cdn-cgi/l/email-protection#80e7f2f8e3e5aee4e5f6c0e7ede1e9ecaee3efedbff3f5e2eae5e3f4bdc7e5f4a5b2b0e9eea5b2b0d4eff5e3e8a1" aria-label="Email">
+            <a href="mailto:grxce.dev@gmail.com?subject=Get%20in%20Touch!" aria-label="Email">
               <img src="extras/images/email4.png" alt="Gmail">
             </a>
           </div>
         </div>
       </div>
     </header>
- 
+
     <main>
+
       <section>
         <h2>Abstract</h2>
         <p>
-          It is estimated that there are around 25,000 people in the UK who primarily communicate using British Sign Language (BSL), and yet mainstream video conferencing tools provide no real-time transcription for signers, creating a significant accessibility gap in social, educational, and professional interactions.
-          This project investigates the feasibility of real-time BSL transcription into English captions using a standard webcam and real-world conditions. The goal is to explore whether computer vision and machine learning techniques, such as convolutional neural networks, can recognise hand shapes, movements, and body language to accurately translate into real-time captions.
-          While prior research has achieved promising results for American Sign Language, BSL is underrepresented and differs substantially in grammar, vocabulary, and structure. This project aims to address that gap by focusing specifically on BSL and using the available datasets to train and evaluate models.
-          By investigating the technical challenges and limitations, including dataset size and availability, variability in signing including body language, and real-time processing, the project contributes to understanding how inclusive communication technologies can be developed. 
+          It is estimated that there are around 25,000 people in the UK who primarily communicate using British Sign Language (BSL), and yet mainstream video conferencing tools provide no real-time transcription for signers - creating a significant accessibility gap in social, educational, and professional interactions. For those 25,000 BSL users, a £0 webcam could replace £3,000+ specialist captioning equipment.
+        </p>
+        <br>
+        <p>
+          This project investigates the feasibility of real-time BSL transcription into English captions using a standard webcam under real-world conditions. The goal is to explore whether machine learning techniques, specifically Long Short-Term Memory (LSTM) networks which capture temporal patterns across sequential hand movements, can recognise BSL signs and translate them into real-time captions.
+        </p>
+        <br>
+        <p>
+          While prior research has achieved promising results for American Sign Language, BSL is underrepresented and differs substantially in grammar, vocabulary, and structure. BSL's two-handed alphabet alone doubles the landmark complexity per frame compared to ASL approaches. This project aims to address that gap by focusing specifically on BSL, and by investigating the technical challenges; including dataset size, variability in signing, and real-time processing, to understand how inclusive communication technologies can be developed.
         </p>
       </section>
- 
+
       <section class="demo-box" aria-label="Project demo">
         <iframe
           src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
@@ -48,115 +54,197 @@
           style="width:100%; height:100%; border:none; border-radius:20px;">
         </iframe>
       </section>
- 
+
       <section class="currentandfuture">
         <div class="current">
-        <h2>Current Capabilities</h2>
+          <h2>Current Capabilities</h2>
           <ul>
             <li>Webcam video capture (OpenCV)</li>
             <li>Hand landmark extraction (MediaPipe)</li>
             <li>Feature vector generation (.npy)</li>
-            <li>Initial TensorFlow/Keras classifier</li>
+            <li>LSTM classifier (TensorFlow / Keras)</li>
+            <li>~30fps on consumer hardware</li>
+            <li>No specialist equipment needed</li>
           </ul>
         </div>
- 
         <div class="future">
           <h2>Future Developments</h2>
           <ul>
             <li>Expanded BSL vocabulary</li>
             <li>Sentence-level recognition</li>
             <li>Real-time captioning overlay</li>
+            <li>Facial &amp; body landmark features</li>
+            <li>Improved cross-user robustness</li>
             <li>Mobile device support</li>
           </ul>
         </div>
       </section>
- 
+
+      <section class="asl-bsl">
+        <h2>Why BSL is Different to ASL</h2>
+        <p class="asl-bsl-intro">Automatic sign language recognition has been explored extensively for American Sign Language, but BSL remains underrepresented. The two languages differ significantly — BSL's two-handed alphabet alone doubles the landmark complexity per frame, making existing ASL models unsuitable for direct use.</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>BSL</th>
+                <th>ASL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alphabet</td>
+                <td>Two-handed</td>
+                <td>One-handed</td>
+              </tr>
+              <tr>
+                <td>Grammar</td>
+                <td>Topic-comment structure</td>
+                <td>Subject-object-verb</td>
+              </tr>
+              <tr>
+                <td>Origin</td>
+                <td>Martha's Vineyard + French SL</td>
+                <td>French Sign Language</td>
+              </tr>
+              <tr>
+                <td>Intelligibility</td>
+                <td colspan="2" class="center">Not mutually intelligible — separate language systems</td>
+              </tr>
+              <tr>
+                <td>Datasets</td>
+                <td>Very limited</td>
+                <td>Well-studied</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="challenges">
+        <h2>Why This Problem Is Hard</h2>
+
+        <ul class="challenge-list">
+          <li>No large, publicly available BSL datasets</li>
+          <li>Sign language varies significantly between individuals</li>
+          <li>BSL uses two hands, doubling spatial complexity</li>
+          <li>Meaning depends on motion over time, not static frames</li>
+          <li>Real-time processing required (~30fps constraint)</li>
+        </ul>
+      </section>
+
       <section class="timeline">
         <h2>Pipeline</h2>
+        <p class="pipeline-intro">You sign into a webcam AND English captions appear on screen in real time. Here's how it works under the hood:</p>
         <div class="timeline-container">
- 
+
           <div class="timeline-item">
             <div class="content">
               <h3>Webcam Video</h3>
+              <p>Live feed captured via OpenCV at ~30fps</p>
             </div>
           </div>
- 
+
           <div class="timeline-item">
             <div class="content">
               <h3>MediaPipe</h3>
-              <p>Hand Landmark Detection</p>
+              <p>Hand landmark detection: 21 points per hand, up to 2 hands (126 features per frame)</p>
             </div>
           </div>
- 
+
           <div class="timeline-item">
             <div class="content">
               <h3>Feature Vector Creation</h3>
+              <p>35 frames buffered into a sequence, saved as a .npy array (shape: 35 × 126)</p>
             </div>
           </div>
- 
+
           <div class="timeline-item">
             <div class="content">
-              <h3>TensorFlow / Keras</h3>
-              <p>Classifier</p>
+              <h3>LSTM Classifier</h3>
+              <p>Long Short-Term Memory network captures temporal gesture patterns — trained with TensorFlow / Keras on 60 self-collected samples per sign</p>
             </div>
           </div>
- 
+
           <div class="timeline-item">
             <div class="content">
               <h3>Predicted Sign</h3>
-              <p>Text Output</p>
+              <p>Classified sign displayed as a real-time text caption overlay</p>
             </div>
           </div>
- 
+
         </div>
       </section>
- 
+
+      <section class="evaluation">
+        <h2>Prototype Evaluation</h2>
+        <p>
+          This project presents a proof-of-concept system demonstrating that real-time BSL transcription is feasible under real-world constraints. The current prototype is validated on a small set of signs (GOOD, BAD), using a deliberately limited dataset to test whether stable real-time performance can be achieved on consumer hardware.
+        </p>
+        <p class="eval-note"> The central challenge — and focus of ongoing work — is scaling this approach to a larger vocabulary with more diverse training data while maintaining real-time performance. </p>
+      </section>
+
+      <section class="performance">
+        <h2>Model Performance</h2>
+
+        <p class="performance-intro">
+          While the dataset is intentionally small, early training results show clear convergence and consistent real-time predictions for trained signs.
+        </p>
+
+        <div class="performance-content">
+
+          <div class="performance-graph">
+            <img src="extras/images/loss_graph.png" alt="Training loss curve">
+            <p class="caption">Training loss decreasing over 30 epochs, with convergence from epoch ~13 onward.</p>
+          </div>
+
+          <div class="performance-predictions">
+            <h3>Example Predictions</h3>
+            <ul>
+              <li><strong>GOOD</strong> → Confidence: 0.92</li>
+              <li><strong>BAD</strong> → Confidence: 0.89</li>
+              <li>Stable predictions across real-time webcam input</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
       <section class="downloads">
         <a href="extras/images/bsl_infographic.png" download class="download-btn">
           ⬇ BSL Sign Language Image
         </a>
         <a href="extras/images/Lovelace_Submission_gcarey.pdf" download class="download-btn">
-          ⬇ Download Poster
+          ⬇ Download Lovelace Poster
         </a>
-
-        <a href="path_to_file" download="proposed_file_name">Download</a>
-
       </section>
- 
+
       <section class="contact">
         <div class="contact-form-wrapper">
-          <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/gracecarey-dev/" class="contact-item">
-              <div class="circle"></div>
-              <p><strong>LinkedIn</strong></p>
-            </a>
-            <a href="https://github.com/grxce-dev" class="contact-item">
-              <div class="circle"></div>
-              <p><strong>GitHub</strong><br>— view source code</p>
-            </a>
+          <div class="contact-intro">
+            <h2 class="contact-heading">Get in Touch</h2>
+            <p class="contact-subtext">Have feedback, ideas, or just want to chat about the project? I'd love to hear from you!</p>
           </div>
- 
           <div class="contact-form">
-            <form action="https://formspree.io/f/xgondady" method="POST" >
-            <label for="email">Your email:</label>
-            <input id="email" type="email" name="email" placeholder="you@example.com">
- 
-            <label for="message">Your message:</label>
-            <textarea id="message" name="message" placeholder="Say hello…"></textarea>
- 
-            <button type="submit">Send</button>
+            <form action="https://formspree.io/f/xgondady" method="POST">
+              <label for="email">Your email:</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com">
+              <label for="message">Your message:</label>
+              <textarea id="message" name="message" placeholder="Say hello…"></textarea>
+              <button type="submit">Send</button>
+            </form>
           </div>
         </div>
       </section>
- 
+
     </main>
- 
+
     <footer>
       <p>© 2026 Grace Carey &nbsp;·&nbsp; <a href="#">Back to top</a></p>
     </footer>
 
     <script>
-      // Animate timeline items into view on scroll
       const items = document.querySelectorAll('.timeline-item');
       const observer = new IntersectionObserver(
         (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }),
