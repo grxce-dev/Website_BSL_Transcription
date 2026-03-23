@@ -6,47 +6,23 @@
     font-display: swap;
 }
 
-/* =====================
-   CSS VARIABLES
-   ===================== */
-:root {
-    --teal:   #1f5f75;
-    --pink:   #d7b3c9;
-    --sand:   #e8cf8f;
-    --slate:  #a9b9c9;
-    --bg:     #f5f5f5;
-    --text:   #222;
-    --white:  #ffffff;
-    --radius-sm: 10px;
-    --radius-md: 20px;
-    --radius-lg: 30px;
-}
-
-/* =====================
-   RESET
-   ===================== */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =====================
-   BASE
-   ===================== */
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: #F8F8FC;
+    color: black;
     line-height: 1.6;
 }
 
-/* =====================
-   HERO
-   ===================== */
+/* HERO */
 .hero {
-    background-color: var(--teal);
-    color: var(--white);
+    background-color: #0C1B2A;
+    color: white;
     padding: 2.5rem 1.25rem;
 }
 
@@ -63,7 +39,7 @@ body {
 .profile-circle {
     width: 120px;
     height: 120px;
-    background-color: pink;
+    background-color: #F095A4;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -106,9 +82,7 @@ body {
     object-fit: contain;
 }
 
-/* =====================
-   MAIN
-   ===================== */
+/* == MAIN == */
 main {
     max-width: 900px;
     margin: 0 auto;
@@ -121,22 +95,19 @@ section {
 
 h2 {
     font-size: 1.4rem;
+    text-align: center;
     margin-bottom: 0.75rem;
-    color: var(--teal);
+    color: black;
 }
 
-/* =====================
-   DEMO BOX
-   ===================== */
+/* == DEMO BOX == */
 .demo-box {
-    height: 200px;
-    background-color: var(--teal);
-    border-radius: var(--radius-md);
+    height: 400px;
+    background-color: #0F1B29;
+    border-radius: 20px;
 }
 
-/* =====================
-   LISTS
-   ===================== */
+/* == LISTS == */
 ul {
     list-style: none;
     display: flex;
@@ -146,13 +117,22 @@ ul {
 
 ul li::before {
     content: "✓ ";
-    color: var(--teal);
+    color: #0F1B29;
     font-weight: bold;
 }
 
-/* =====================
-   TIMELINE
-   ===================== */
+/* == Current and Future == */
+.currentandfuture {
+    display: flex;
+    gap: 2rem;
+}
+
+.currentandfuture .current,
+.currentandfuture .future {
+    flex: 1;
+}
+
+/* == TIMELINE == */
 .timeline {
     margin-top: 1rem;
 }
@@ -170,7 +150,7 @@ ul li::before {
     top: 0;
     bottom: 0;
     width: 4px;
-    background-color: var(--teal);
+    background-color: #0F1B29;
     border-radius: 2px;
 }
 
@@ -193,21 +173,21 @@ ul li::before {
     top: 12px;
     width: 18px;
     height: 18px;
-    background-color: var(--pink);
-    border: 3px solid var(--teal);
+    background-color: #FF8FA3;
+    border: 3px solid #0F1B29;
     border-radius: 50%;
 }
 
 .content {
-    background: var(--white);
+    background: white;
     padding: 0.9rem 1.1rem;
-    border-radius: var(--radius-sm);
+    border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .content h3 {
     margin-bottom: 0.2rem;
-    color: var(--teal);
+    color: #0F1B29;
 }
 
 .timeline-item::after {
@@ -215,7 +195,7 @@ ul li::before {
     position: absolute;
     left: -22px;
     bottom: -22px;
-    color: var(--teal);
+    color: #0F1B29;
     font-size: 1.1rem;
 }
 
@@ -223,17 +203,15 @@ ul li::before {
     content: "";
 }
 
-/* =====================
-   CONTACT SECTION
-   ===================== */
+/* CONTACT SECTION */
 .contact {
     padding: 1rem 0 2rem;
 }
 
 .contact-form-wrapper {
-    background-color: var(--teal);
+    background-color: #0F1B29;
     padding: 1.75rem;
-    border-radius: var(--radius-lg);
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -251,7 +229,7 @@ ul li::before {
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    color: var(--white);
+    color: white;
 }
 
 .contact-item p {
@@ -261,7 +239,7 @@ ul li::before {
 .circle {
     width: 52px;
     height: 52px;
-    background-color: var(--pink);
+    background-color: #FF8FA3;
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -269,12 +247,14 @@ ul li::before {
 /* Form */
 .contact-form {
     display: flex;
+    align-items: center;
+    text-align: center;
     flex-direction: column;
     gap: 0.75rem;
 }
 
 .contact-form label {
-    color: var(--white);
+    color: white;
     font-size: 0.9rem;
 }
 
@@ -283,32 +263,32 @@ ul li::before {
     width: 100%;
     padding: 0.8rem 1rem;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 10px;
     font-family: inherit;
     font-size: 0.95rem;
     color: var(--text);
-    background: var(--white);
+    background: white;
 }
 
 .contact-form textarea {
     height: 130px;
-    border: 3px solid var(--sand);
-    border-radius: var(--radius-md);
+    border: 3px solid #a9b9c9;
+    border-radius: 20px;
     resize: vertical;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: 2px solid var(--sand);
+    outline: 2px solid #a9b9c9;
     outline-offset: 2px;
 }
 
 .contact-form button {
     align-self: center;
     padding: 0.75rem 2.25rem;
-    border-radius: var(--radius-md);
+    border-radius: 20px;
     border: none;
-    background-color: var(--slate);
+    background-color: #a9b9c9;
     font-family: inherit;
     font-size: 1rem;
     cursor: pointer;
@@ -316,22 +296,46 @@ ul li::before {
 }
 
 .contact-form button:hover {
-    background-color: var(--pink);
+    background-color: #FF8FA3;
 }
 
-/* =====================
-   FOOTER
-   ===================== */
+/* == DOWNLOAD BUTTONS == */
+.downloads {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background-color: #0F1B29;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.download-btn:hover {
+    background-color: #FF8FA3;
+}
+
+/* == FOOTER == */
 footer {
-    background-color: var(--teal);
-    color: var(--white);
+    background-color: #0F1B29;
+    color: white;
     text-align: center;
     padding: 1.25rem 1rem;
     font-size: 0.9rem;
 }
 
 footer a {
-    color: var(--pink);
+    color: #FF8FA3;
     text-decoration: none;
 }
 
@@ -339,9 +343,14 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* =====================
-   DESKTOP  (≥ 768px)
-   ===================== */
+/* == MOBILE (< 768px) == */
+@media (max-width: 767px) {
+    .currentandfuture {
+        flex-direction: column;
+    }
+}
+
+/* == DESKTOP  (≥ 768px) == */
 @media (min-width: 768px) {
 
     .hero-content {
