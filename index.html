@@ -13,7 +13,7 @@
         <div class="profile-circle"></div>
         <div class="hero-text">
           <h1>Grace Carey</h1>
-          <p>Building real-time AI systems to make communication more accessible</p>
+          <p>Aspiring software engineer and advocate for inclusion in technology</p>
           <div class="contact-links">
             <a href="https://www.linkedin.com/in/gracecarey-dev/" aria-label="LinkedIn">
               <img src="extras/images/linkedin.png" alt="LinkedIn">
@@ -32,7 +32,10 @@
     <main>
 
       <section>
-        <h2>Abstract</h2>
+        <h1 class="title">Real-time BSL captioning using nothing but a webcam.</h1>
+        <p class="title">I built a system that turns sign language into live English captions, running at 30fps on a standard laptop.</p>
+        <br>
+        <hr>
         <p>
           It is estimated that there are around 25,000 people in the UK who primarily communicate using British Sign Language (BSL), and yet mainstream video conferencing tools provide no real-time transcription for signers - creating a significant accessibility gap in social, educational, and professional interactions. For those 25,000 BSL users, a £0 webcam could replace £3,000+ specialist captioning equipment.
         </p>
@@ -82,7 +85,7 @@
 
       <section class="asl-bsl">
         <h2>Why BSL is Different to ASL</h2>
-        <p class="asl-bsl-intro">Automatic sign language recognition has been explored extensively for American Sign Language, but BSL remains underrepresented. The two languages differ significantly — BSL's two-handed alphabet alone doubles the landmark complexity per frame, making existing ASL models unsuitable for direct use.</p>
+        <p class="asl-bsl-intro">Automatic sign language recognition has been explored extensively for American Sign Language, but BSL remains underrepresented. The two languages differ significantly, BSL's two-handed alphabet alone doubles the landmark complexity per frame, making existing ASL models unsuitable for direct use.</p>
         <div class="table-wrapper">
           <table>
             <thead>
@@ -110,7 +113,7 @@
               </tr>
               <tr>
                 <td>Intelligibility</td>
-                <td colspan="2" class="center">Not mutually intelligible — separate language systems</td>
+                <td colspan="2" class="center">Not mutually intelligible - separate language systems</td>
               </tr>
               <tr>
                 <td>Datasets</td>
@@ -131,6 +134,16 @@
           <li>BSL uses two hands, doubling spatial complexity</li>
           <li>Meaning depends on motion over time, not static frames</li>
           <li>Real-time processing required (~30fps constraint)</li>
+        </ul>
+      </section>
+
+      <section class="matters">
+        <h2>Why This Problem Matters</h2>
+
+        <ul class="matters-list">
+          <li>25,000 BSL users underserved</li>
+          <li>£0 webcam vs £3000 equipment</li>
+          <li>No real-time solutions exist</li>
         </ul>
       </section>
 
@@ -180,9 +193,12 @@
       <section class="evaluation">
         <h2>Prototype Evaluation</h2>
         <p>
-          This project presents a proof-of-concept system demonstrating that real-time BSL transcription is feasible under real-world constraints. The current prototype is validated on a small set of signs (GOOD, BAD), using a deliberately limited dataset to test whether stable real-time performance can be achieved on consumer hardware.
+          This project presents a proof-of-concept system demonstrating that real-time BSL transcription is feasible under real-world constraints. The system is intentionally validated on a minimal vocabulary
+          to test a specific question: can real-time BSL recognition work reliably on consumer hardware?
+
+          The answer so far is <strong>YES</strong> with stable predictions at ~30fps.
         </p>
-        <p class="eval-note"> The central challenge — and focus of ongoing work — is scaling this approach to a larger vocabulary with more diverse training data while maintaining real-time performance. </p>
+        <p class="eval-note"> The main challenge is scaling this approach to a larger vocabulary with more diverse training data while maintaining real-time performance. </p>
       </section>
 
       <section class="performance">
