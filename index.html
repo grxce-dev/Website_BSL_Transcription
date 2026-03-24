@@ -10,7 +10,7 @@
 
     <header class="hero">
       <div class="hero-content">
-        <div class="profile-circle"></div>
+        <div class="profile-circle"><img src="extras/images/profile_pic.jpg" alt="profile_pic"></div>
         <div class="hero-text">
           <h1>Grace Carey</h1>
           <p>Aspiring software engineer and advocate for inclusion in technology</p>
@@ -142,8 +142,9 @@
 
         <ul class="matters-list">
           <li>25,000 BSL users underserved</li>
-          <li>£0 webcam vs £3000 equipment</li>
-          <li>No real-time solutions exist</li>
+          <li>Not using any specialist hardware</li>
+          <li>No real-time solutions currently exist for BSL</li>
+          <li>BSL is a full language, not a simplified English </li>
         </ul>
       </section>
 
@@ -212,6 +213,17 @@
 
           <div class="performance-graph">
             <img src="extras/images/loss_graph.png" alt="Training loss curve">
+                <div style="display:flex; gap:1.5rem; justify-content:center; margin-top:0.6rem;">
+                  <span style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem;">
+                      <span style="display:inline-block; width:28px; height:3px; background:#0F1B29; border-radius:2px;"></span>
+                      Training loss
+                  </span>
+                  <span style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem;">
+                      <span style="display:inline-block; width:28px; height:3px; background:#21C3A8; border-radius:1px;"></span>
+                      Validation loss
+                  </span>
+              </div>
+
             <p class="caption">Training loss decreasing over 30 epochs, with convergence from epoch ~13 onward.</p>
           </div>
 
@@ -228,12 +240,22 @@
       </section>
 
       <section class="downloads">
-        <a href="extras/images/bsl_infographic.png" download class="download-btn">
-          ⬇ BSL Sign Language Image
-        </a>
-        <a href="extras/images/Lovelace_Submission_gcarey.pdf" download class="download-btn">
-          ⬇ Download Lovelace Poster
-        </a>
+        <a href="extras/images/bsl_infographic.png" download class="download-btn"> Download BSL Finger Spelling </a>
+
+        <button class="download-btn" onclick="myFunction()">Show References ↓</button>
+
+        <a href="extras/images/Lovelace_Submission_gcarey.pdf" download class="download-btn"> Download Lovelace Poster </a>
+
+        <div class="ref" id="ref" style="display:none">
+          <ul>
+            <li>Camgoz, N.C. et al. (2018) ‘Neural sign language translation’, 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition. Introduces a deep learning approach for translating sign language video directly into text, demonstrating the importance of non-manual features such as facial expressions and body posture.</li>
+            <li>Sincan, O. et al. (2021) ‘Chalearn lap large scale Signer Independent Isolated Sign Language Recognition Challenge: Design, results and future research’, 2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW) Reviews isolated sign language recognition methods using pose and landmark-based deep learning approaches.</li>
+            <li>Albanie, S. et al. (2021) BBC-Oxford British sign language dataset, arXiv.org. Available at: https://arxiv.org/abs/2111.03635 Presents a large publicly available dataset for British Sign Language research.</li>
+            <li>Koller, O., Forster, J. and Ney, H. (2015) ‘Continuous sign language recognition: Towards large vocabulary statistical recognition systems handling multiple signers’, Computer Vision and Image Understanding. Examines challenges in continuous sign language recognition, including signer variation and coarticulation. This justifies the project’s decision to focus on isolated signs and predefined sentences.</li>
+            <li>University of Surrey. British Sign Language Corpus Project. Available at: https://bsl.surrey.ac.uk A large dataset of annotated BSL videos. This resource supports background research into BSL structure and non-manual features.</li>
+            <li>Google. MediaPipe Documentation. Available at: https://developers.google.com/mediapipe Documentation for a real-time landmark extraction framework for hands, face, and body.</li>
+          </ul>
+        </div>
       </section>
 
       <section class="contact">
@@ -253,7 +275,6 @@
           </div>
         </div>
       </section>
-
     </main>
 
     <footer>
@@ -267,6 +288,19 @@
         { threshold: 0.2 }
       );
       items.forEach(item => observer.observe(item));
+
+      function myFunction() {
+          var x = document.getElementById("ref");
+          var btn = document.querySelector('.download-btn[onclick]');
+          if (x.style.display === "none") {
+              x.style.display = "block";
+              btn.textContent = "Hide References ↑";
+          } else {
+              x.style.display = "none";
+              btn.textContent = "Show References ↓";
+          }
+      }
+
     </script>
 
   </body>

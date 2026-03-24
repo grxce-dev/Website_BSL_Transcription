@@ -18,14 +18,8 @@ body {
     color: black;
     line-height: 1.6;
 }
-
-.title {
-    text-align: center;
-}
  
-/* =====================
-   HERO
-   ===================== */
+/* HERO */
 .hero {
     background-color: #0C1B2A;
     color: white;
@@ -47,7 +41,14 @@ body {
     height: 120px;
     background-color: #F095A4;
     border-radius: 50%;
-    flex-shrink: 0;
+    padding: 5px; /* creates pink border effect */
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
  
 .hero-text h1 {
@@ -85,9 +86,7 @@ body {
     object-fit: contain;
 }
  
-/* =====================
-   MAIN
-   ===================== */
+/* MAIN */
 main {
     max-width: 900px;
     margin: 0 auto;
@@ -104,9 +103,7 @@ h2 {
     color: black;
 }
  
-/* =====================
-   DEMO BOX
-   ===================== */
+/* DEMO BOX */
 .demo-box {
     height: 400px;
     background-color: #0F1B29;
@@ -114,9 +111,52 @@ h2 {
     overflow: hidden;
 }
  
-/* =====================
-   CURRENT & FUTURE
-   ===================== */
+/* BULLET POINTS */
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Current & Future */
+.currentandfuture ul li::before {
+    content: "✓ ";
+    color: #0F1B29;
+    font-weight: bold;
+}
+
+/* Challenges list */
+.challenge-list li::before {
+    content: "⚠ ";
+    color: #FF8FA3;
+}
+
+/* Matters list */
+.matters-list li::before {
+    content: "→ ";
+    color: #0F1B29;
+    font-weight: bold;
+}
+
+/* References */
+.ref ul li::before {
+    content: " • ";
+    color: #0F1B29;
+    font-weight: bold;
+}
+
+
+.currentandfuture ul li,
+.challenge-list li,
+.matters-list li {
+    padding-left: 0.25rem;
+}
+
+/* ----------------------------------------------------*/
+
+/* CURRENT & FUTURE */
 .currentandfuture {
     display: flex;
     gap: 2rem;
@@ -130,23 +170,105 @@ h2 {
 .currentandfuture h2 {
     text-align: center;
 }
+
+/* EVALUATION */
+.evaluation {
+    background: #0F1B29;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
  
-ul {
-    list-style: none;
+.evaluation h2 {
+    text-align: center;
+    color: #ffffff;
+}
+ 
+.evaluation p {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+ 
+.eval-note {
+    font-style: italic;
+    color: #ffffff !important;
+    border-left: 3px solid #FF8FA3;
+    padding-left: 0.75rem;
+}
+ 
+
+/* PERFORMANCE */
+.performance, .matters {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.performance h2, .matters h2 {
+    text-align: center;
+}
+
+.performance-intro {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.25rem;
+}
+
+.performance-content {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 1.5rem;
 }
- 
-ul li::before {
-    content: "✓ ";
+
+.performance-graph img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+.performance-predictions h3 {
+    margin-bottom: 0.5rem;
     color: #0F1B29;
-    font-weight: bold;
 }
- 
-/* =====================
-   ASL vs BSL TABLE
-   ===================== */
+
+/* CHALLENGES */
+
+.challenges {
+    background: #0F1B29;
+    color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+.challenges h2 {
+    text-align: center;
+    color: white;
+}
+
+.challenge-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.challenge-list li::before {
+    content: "⚠ ";
+    color: #FF8FA3;
+}
+
+
+/* ----------------------------------------------------*/
+/* ASL vs BSL TABLE */
 .asl-bsl {
     background: white;
     border-radius: 20px;
@@ -202,19 +324,16 @@ td.center {
     font-style: italic;
     color: #555;
 }
- 
-/* =====================
-   PIPELINE INTRO
-   ===================== */
+
+/* ----------------------------------------------------*/
+/* PIPELINE INTRO */
 .pipeline-intro {
     font-size: 0.95rem;
     color: #444;
     margin-bottom: 0.5rem;
 }
  
-/* =====================
-   TIMELINE
-   ===================== */
+/* TIMELINE */
 .timeline {
     margin-top: 1rem;
 }
@@ -267,7 +386,6 @@ td.center {
 }
  
 .timeline-item::after {
-    content: "↓";
     position: absolute;
     left: -22px;
     bottom: -22px;
@@ -279,37 +397,8 @@ td.center {
     content: "";
 }
  
-/* =====================
-   EVALUATION
-   ===================== */
-.evaluation {
-    background: #0F1B29;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-}
- 
-.evaluation h2 {
-    text-align: center;
-    color: #ffffff;
-}
- 
-.evaluation p {
-    font-size: 0.95rem;
-    color: #ffffff;
-    margin-bottom: 0.75rem;
-}
- 
-.eval-note {
-    font-style: italic;
-    color: #ffffff !important;
-    border-left: 3px solid #FF8FA3;
-    padding-left: 0.75rem;
-}
- 
-/* =====================
-   DOWNLOAD BUTTONS
-   ===================== */
+
+/* DOWNLOAD BUTTONS */
 .downloads {
     display: flex;
     gap: 1rem;
@@ -334,10 +423,8 @@ td.center {
 .download-btn:hover {
     background-color: #FF8FA3;
 }
- 
-/* =====================
-   CONTACT SECTION
-   ===================== */
+
+/* CONTACT SECTION */
 .contact {
     padding: 1rem 0 2rem;
 }
@@ -420,10 +507,8 @@ td.center {
 .contact-form button:hover {
     background-color: #FF8FA3;
 }
- 
-/* =====================
-   FOOTER
-   ===================== */
+
+/* FOOTER */
 footer {
     background-color: #0F1B29;
     color: white;
@@ -440,11 +525,9 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
  
- 
-/* =====================
-   DESKTOP (≥ 768px)
-   ===================== */
+/* DESKTOP (≥ 768px) */
 @media (min-width: 768px) {
  
     .hero-content {
@@ -485,79 +568,6 @@ footer a:hover {
     }
 
     .currentandfuture {
-        flex-direction: column;
+        flex-direction: row;
     }
-}
-
-/* =====================
-   PERFORMANCE
-   ===================== */
-
-.performance, .matters {
-    background: white;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-}
-
-.performance h2, .matters h2 {
-    text-align: center;
-}
-
-.performance-intro {
-    text-align: center;
-    font-size: 0.95rem;
-    color: #444;
-    margin-bottom: 1.25rem;
-}
-
-.performance-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.performance-graph img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-.caption {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 0.4rem;
-    text-align: center;
-}
-
-.performance-predictions h3 {
-    margin-bottom: 0.5rem;
-    color: #0F1B29;
-}
-
-/* =====================
-   CHALLENGES
-   ===================== */
-
-.challenges {
-    background: #0F1B29;
-    color: white;
-    border-radius: 20px;
-    padding: 1.5rem;
-}
-
-.challenges h2 {
-    text-align: center;
-    color: white;
-}
-
-.challenge-list {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.challenge-list li::before {
-    content: "⚠ ";
-    color: #FF8FA3;
 }
